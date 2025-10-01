@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <style>
+         body {
+            background-color: black;
+        }
+
+        .card {
+            width: 300px;
+            margin: 10px auto;
+            padding: 2em;
+            background-color: #1c1f2b;
+            position: relative;
+            color: white;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .card::after,
+        .card::before {
+            --angle: 0deg;
+            content: ' ';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: conic-gradient(from var(--angle), transparent 0%, aqua, blue, red, rgb(191, 241, 191), orange);
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            padding: 4px;
+            border-radius: 12px;
+            animation: loader 3s linear infinite;
+        }
+
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        /*  */
+        @keyframes loader {
+            from {
+                --angle: 0deg;
+            }
+
+            to {
+                --angle: 360deg;
+            }
+        }
+
+        .card::before {
+            filter: blur(1.5rem);
+            opacity: 0.5;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            background-color: purple;
+            border-radius: 12px;
+            display: inline-block;
+            border: 1px solid white;
+            
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+b{
+    color: white;
+}
+    .control{
+                    display: flex;
+                    justify-content: center;
+                    align-items:center ;
+                  }
+#head{
+    margin-top: 100px;
+}   @media (max-width: 377px) { 
+                
+                  #head{
+                    text-align: center;
+                    font-size: 10px;
+                    margin-top: 50px;
+                  }
+                  img{
+                    width: 20px;
+                    height: 20px;
+
+                  }
+                  .control{
+                    display: flex;
+                    justify-content: center;
+                    align-items:center ;
+                  }
+             }
+    </style>
+</head>
+<body>
+   <div class="control"> <div class="heading" id="head"><h1><img src="./images/heart.png" alt="heart"><b class="purple">Code</b><b class="blue">Crush</b><img src="./images/heart.png" alt="heart"></h1></div>
+   </div>   <div class="card">
+        <h2>Download  Html Notes </h2>
+ <a href="./HTML.pdf" download>Download HTML Notes (PDF)</a>
+
+        </div>
+</body>
+</html>
